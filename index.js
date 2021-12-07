@@ -35,7 +35,7 @@ admin.initializeApp({
 });
 
 app.use(express.json());
-router.use(cors());
+app.use(cors());
 
 app.use("/api", require("./routes/api/register"));
 
