@@ -6,6 +6,7 @@ const express = require("express");
 const bdoyParser = require("body-parser");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 5000;
 
@@ -34,6 +35,8 @@ admin.initializeApp({
 });
 
 app.use(express.json());
+router.use(cors());
+
 app.use("/api", require("./routes/api/register"));
 
 /**
