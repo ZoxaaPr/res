@@ -22,7 +22,7 @@ class User {
       const salt = await bcrypt.genSalt(10);
       const hashPassword = await bcrypt.hash(password, salt);
 
-      await db.collection("users").doc(id).set({
+      await db.collection("users").doc(email).set({
         id,
         email,
         password: hashPassword,
@@ -33,6 +33,12 @@ class User {
       res.send(error.message);
     }
   }
+
+  // async getEmails(req, res) {
+  //   const userRef = db.collection("users");
+  //   let emails = await userRef.where(email).get();
+  //   res.status(200).json({ emails: emails });
+  // }
 }
 
 module.exports = new User();

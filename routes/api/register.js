@@ -12,9 +12,7 @@ const router = express.Router();
  *        description: A successful response
  */
 
-router.get("/", (req, res) => {
-  res.send("pipi");
-});
+// router.get("/", userController.getEmails);
 router.post("/", userController.create);
 
 module.exports = router;
