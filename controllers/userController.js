@@ -27,7 +27,8 @@ class User {
         email,
         password: hashPassword,
       });
-      res.send("dd");
+      //res.send("Email успешно зарегистрирован");
+      res.status(200).json({ message: "Email успешно зарегистрирован" });
     } catch (error) {
       res.send(error.message);
     }
